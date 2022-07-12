@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <pre id="text"></pre>
+    <script>
+      (async () => {
+        document.getElementById("text").innerText = `
+window.parent (not an iframe): ${window.parent === window ? "OK" : "Not OK!"}
+window.isSecureContext (headers): ${window.isSecureContext === true ? "OK" : "Not OK!"}
+window.SharedArrayBuffer: ${typeof window.SharedArrayBuffer === "function" ? "OK" : "Not OK!"}
+        `;
+      })();
+    </script>
+  </body>
+</html>
